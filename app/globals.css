@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+  --font-display: "Bahnschrift", "DIN Alternate", "Avenir Next Condensed", "Avenir Next",
+    "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: rgba(188, 105, 33, 0.18);
+  color: #111b25;
+}
+
+@layer base {
+  * {
+    @apply border-steel-200;
+  }
+
+  body {
+    @apply text-ink;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    @apply transition duration-300;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgba(188, 105, 33, 0.6);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-[0.74rem] font-semibold uppercase tracking-[0.26em] text-steel-500;
+  }
+
+  .btn-core {
+    @apply relative inline-flex items-center gap-2 overflow-hidden rounded-full px-5 py-3.5 text-sm font-semibold tracking-[0.02em] transition duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-copper-500 text-white shadow-soft hover:bg-copper-400;
+  }
+
+  .btn-secondary {
+    @apply border border-steel-200 bg-white text-ink shadow-soft hover:border-copper-200 hover:bg-copper-50;
+  }
+
+  .btn-ghost {
+    @apply border border-white/15 bg-white/5 text-white hover:border-white/25 hover:bg-white/10;
+  }
+
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 28%,
+      rgba(255, 255, 255, 0.34) 50%,
+      transparent 72%
+    );
+    transform: translateX(-140%);
+    transition: transform 650ms ease;
+  }
+
+  .btn-shine:hover::after {
+    transform: translateX(140%);
+  }
+
+  .form-field {
+    @apply w-full rounded-2xl border border-steel-200 bg-canvas/70 px-4 py-3 text-sm text-ink outline-none placeholder:text-steel-400 focus:border-copper-300 focus:bg-white focus:ring-2 focus:ring-copper-100;
+  }
+
+  .grid-sheen {
+    background-image: linear-gradient(rgba(17, 27, 37, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(17, 27, 37, 0.06) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
