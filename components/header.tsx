@@ -39,8 +39,8 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 border-b border-white/10 transition-all duration-300",
-        scrolled ? "bg-ink/92 shadow-lift backdrop-blur-xl" : "bg-ink/78 backdrop-blur-lg"
+        "sticky top-0 z-50 border-b border-steel-800 bg-ink transition-all duration-300",
+        scrolled ? "shadow-lift" : "shadow-[0_12px_36px_rgba(17,27,37,0.14)]"
       )}
     >
       <div className="section-shell">
@@ -173,4 +173,3 @@ export function Header() {
     </header>
   );
 }
-
