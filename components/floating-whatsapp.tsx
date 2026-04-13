@@ -1,4 +1,4 @@
-import { MessageIcon } from "@/components/icons";
+import { WhatsAppIcon } from "@/components/icons";
 import { buildWhatsAppLink } from "@/lib/utils";
 
 export function FloatingWhatsApp() {
@@ -10,9 +10,8 @@ export function FloatingWhatsApp() {
       rel="noreferrer noopener"
       target="_blank"
     >
-      <MessageIcon className="h-5 w-5" />
+      <WhatsAppIcon className="h-5 w-5" />
       <span className="hidden sm:inline">WhatsApp</span>
     </a>
   );
 }
-
